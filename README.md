@@ -11,18 +11,17 @@ The Lost and Found Platform is a web-based solution designed to help users repor
 -   **Admin Panel:** (Optional) Administration interface for managing users and reported items.
 
 ## 🛠️ Technologies Used
--   **Frontend:** HTML, CSS, JavaScript (potentially with a framework like React or Vue.js)
--   **Backend:** Node.js, Express.js (or a similar backend framework in Python/Java)
--   **Database:** MongoDB (or PostgreSQL/MySQL)
+-   **Backend:** PHP
+-   **Database:** MySQL
+-   **Frontend:** HTML, CSS, JavaScript
+-   **Web Server:** Apache (commonly provided by XAMPP/WAMP)
 -   **Version Control:** Git, GitHub
 
 ## ⚙️ Installation
 To get a local copy up and running, follow these simple steps.
 
 ### Prerequisites
--   Node.js (LTS version recommended)
--   npm (comes with Node.js)
--   MongoDB (or your chosen database system)
+-   XAMPP or WAMP server (includes Apache, MySQL, PHP)
 -   Git
 
 ### Setup
@@ -34,34 +33,20 @@ To get a local copy up and running, follow these simple steps.
    ```bash
    cd -Lost-and-Found-Platform
    ```
-3. Install dependencies (assuming a split frontend/backend or a monorepo structure)
-   ```bash
-   # If you have a 'client' and 'server' directory
-   cd client
-   npm install
-   cd ../server
-   npm install
-   cd ..
-   # Or if a single package.json for the whole project
-   npm install
-   ```
-4. Configure environment variables (if any)
-   ```
-   # Create a .env file and add necessary variables (e.g., database connection string, API keys)
-   ```
+3. Copy project files to your web server's document root
+   *   Move the contents of the cloned repository into your XAMPP's `htdocs` folder or WAMP's `www` folder (e.g., `C:\xampp\htdocs\lostandfound`).
+4. Import the database
+   *   Start Apache and MySQL from your XAMPP/WAMP control panel.
+   *   Open phpMyAdmin (usually via `http://localhost/phpmyadmin`).
+   *   Create a new database (e.g., `lost_and_found_db`).
+   *   Import the provided SQL dump (if available, e.g., `database.sql`) into your newly created database.
+5. Configure database connection
+   *   Locate the database connection file in your project (e.g., `config.php`, `db.php`, or similar) and update it with your MySQL credentials (e.g., username `root`, no password, database name `lost_and_found_db`).
 
 ## 🚀 Usage
-### Start the Backend (if applicable)
-```bash
-cd server
-npm start # or 'node server.js'
-```
-### Start the Frontend (if applicable)
-```bash
-cd client
-npm start
-```
-After starting, open your browser to the specified local address (e.g., `http://localhost:3000`).
+1.  Ensure Apache and MySQL are running in your XAMPP/WAMP control panel.
+2.  Open your web browser and navigate to the project's URL (e.g., `http://localhost/lostandfound`).
+3.  Access the platform to report or search for lost/found items.
 
 ## 🤝 Contributing
 Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
